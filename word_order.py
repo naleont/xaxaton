@@ -3,6 +3,7 @@ import spacy
 
 nlp = spacy.load("en_core_web_sm")
 
+
 def quotes_order(dataset):
     df = pd.read_csv(dataset)
     quotes = df['Text'].values
@@ -10,6 +11,7 @@ def quotes_order(dataset):
     for sent in quotes:
         w_orders.append(word_order(sent))
     return w_orders
+
 
 def word_order(sent):
     d = nlp(sent)
